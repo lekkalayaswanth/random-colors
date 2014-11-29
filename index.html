@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<head>
+<script src="jquery.min.js" type="text/javascript"></script>
+<title>Random p tag color</title>
+</head>
+<body>
+<div id="div-random" style="width: 50%; height: 25%;">
+<p style="color: white;" id="p-random">This is a random colored text</p>
+</div>
+
+<script type="text/javascript">
+	var randColor = function() {
+		var divRed = Math.floor(255*Math.random());
+		var divGreen = Math.floor(255*Math.random());
+		var divBlue = Math.floor(255*Math.random());
+		var pRed = 255-divRed;
+		var pGreen = 255-divGreen;
+		var pBlue = 255-divBlue;
+		return [divRed, divGreen, divBlue, pRed, pGreen, pBlue];
+	}
+	
+	var colorsArray = randColor();
+	$("#div-random").css("background-color","rgb("+colorsArray[0]+","+colorsArray[1]+","+colorsArray[2]+")");
+	$("#p-random").css("color","rgb("+colorsArray[3]+","+colorsArray[4]+","+colorsArray[5]+")");
+
+</script>
+</body>
+</html>

@@ -7,9 +7,9 @@
 </head>
 <body>
 <div id="div-random" style="width: 50%; height: 25%;">
-<p style="color: white;" id="p-random">This is a random colored text</p>
+<p id="p-random">This is a random colored text</p>
 </div>
-
+<button id="button-random">Generate random colors</button>
 <script type="text/javascript">
 	var randColor = function() {
 		var divRed = Math.floor(255*Math.random());
@@ -21,9 +21,11 @@
 		return [divRed, divGreen, divBlue, pRed, pGreen, pBlue];
 	}
 	
-	var colorsArray = randColor();
-	$("#div-random").css("background-color","rgb("+colorsArray[0]+","+colorsArray[1]+","+colorsArray[2]+")");
-	$("#p-random").css("color","rgb("+colorsArray[3]+","+colorsArray[4]+","+colorsArray[5]+")");
+	$("#button-random").click(function(){
+		var colorsArray = randColor();
+		$("#div-random").css("background-color","rgb("+colorsArray[0]+","+colorsArray[1]+","+colorsArray[2]+")");
+		$("#p-random").css("color","rgb("+colorsArray[3]+","+colorsArray[4]+","+colorsArray[5]+")");
+	});
 
 </script>
 </body>
